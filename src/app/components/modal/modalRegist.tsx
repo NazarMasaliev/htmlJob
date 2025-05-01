@@ -40,7 +40,7 @@ export default function RegisterForm() {
         onSubmit={handleSubmit(onSubmit)}
         className="bg-white p-0 rounded shadow-md lg:w-full md:w-1/2 max-w-md"
       >
-        <div className="w-full flex justify-end pe-3 pt-1 pb-0 text-[20px] font-bold cursor-pointer">X</div>
+        <div className="w-full flex justify-end pe-3 pt-1 pb-0 text-[20px] font-bold cursor-pointer" onClick={closemodal}>X</div>
         <div className="w-full flex flex-col justify-center p-8 pt-0 ">
           <h2 className="lg:text-2xl md:text-xl  font-semibold mb-6 text-center">Регистрация</h2>
           <div className="mb-4">
