@@ -4,14 +4,21 @@ import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import HamburgerMenu from './humbergerMenu';
 
+
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
+  function openmodal() {
+    document.getElementById('modal')?.classList.remove('hidden');
+    document.getElementById('modal')?.classList.add('fixed');
+
+  }
 
   return (
+
     <header className="bg-white border-b border-gray-200 shadow-xs w-[100%] flex justify-center fixed z-10 border">
       {/* Desktop Version - Exactly as original */}
       <div className="hidden lg:flex xl:w-[85%] lg:w-[90%] h-[70px] justify-between items-center">
@@ -42,7 +49,7 @@ const Header: React.FC = () => {
         </div>
         <div className='w-[25%] h-[100%] flex items-center justify-end gap-4'>
           <button className='font-semibold cursor-pointer flex items-center gap-3'> <Image src="/Profile.svg" alt="logo" width={30} height={60} className='hover:scale-105 cursor-pointer' />Entre</button>
-          <button className='font-semibold cursor-pointer bg-[#FFCE00] p-2 rounded-md px-4'>Assine UOL</button>
+          <button className='font-semibold cursor-pointer bg-[#FFCE00] p-2 rounded-md px-4' onClick={openmodal}>Assine UOL</button>
         </div>
       </div>
 
@@ -50,7 +57,7 @@ const Header: React.FC = () => {
       <div className="lg:hidden w-[100%] px-10 h-16 sm:h-20 md:h-20 flex justify-between items-center">
         <div className="flex items-center">
           {/* Mobile logo size: 40px */}
-          {/* <Image src="/logo.svg" alt="logo" width={40} height={40} /> */}
+          <Image src="/logoMain.png" alt="logo" width={100} height={100} />
         </div>
 
         {/* Mobile Menu Button */}
@@ -71,11 +78,15 @@ const Header: React.FC = () => {
           } overflow-hidden`}
       >
         <ul className="flex flex-col p-4 ps-10 space-y-4 font-saira-stencil text-lg">
+          <li className=' flex space-x-4 text-sm'>
+            <button className='font-semibold cursor-pointer flex items-center gap-3 active:text-red-600'> <Image src="/Profile.svg" alt="logo" width={30} height={60} className='hover:scale-105 cursor-pointer' />Entre</button><button className='font-semibold cursor-pointer bg-[#FFCE00] p-2 rounded-md px-4' onClick={openmodal}>Assine UOL</button>
+          </li>
           <li className='active:text-red-600'>Top stories</li>
           <li className='active:text-red-600'>Politics</li>
           <li className='active:text-red-600'>Sports</li>
           <li className='active:text-red-600'>Economics</li>
         </ul>
+
       </div>
     </header>
   );

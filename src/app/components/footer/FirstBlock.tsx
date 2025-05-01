@@ -93,9 +93,9 @@ const UolFooter: React.FC = () => {
   ];
 
   return (
-    <footer className="w-[90%] bg-white py-8 border-t border-gray-200">
+    <footer className="w-[90%] bg-white py-8 border-t border-gray-200 md:block hidden">
       <div className="container mx-auto w-full">
-        <div className="w-full flex lg:flex-row  flex-wrap justify-between items-start xl:gap-20 lg:gap-8">
+        <div className="w-full flex lg:flex-row  flex-wrap justify-between items-start xl:gap-20 lg:gap-3">
           {footerColumns.map((column, columnIndex) => (
             <div key={columnIndex} className="flex flex-col space-y-7">
               {column.title != null ? 
@@ -111,7 +111,7 @@ const UolFooter: React.FC = () => {
                   <li key={linkIndex}>
                     <Link 
                       href={link.href}
-                      className="text-gray-600 hover:text-blue-600 text-md transition duration-150"
+                      className="text-gray-600 hover:text-blue-600 xl:text-md lg:text-sm transition duration-150"
                     >
                       {link.text}
                     </Link>
