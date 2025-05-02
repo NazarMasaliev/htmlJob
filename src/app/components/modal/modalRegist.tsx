@@ -38,7 +38,7 @@ export default function RegisterForm() {
     <div id="modal" className="w-[100%] flex justify-center items-center bg-black/50 absolute  z-50 h-[100%] hidden" >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white p-0 rounded shadow-md lg:w-full md:w-[80%] max-w-md"
+        className="bg-white p-0 rounded shadow-md lg:w-full w-[80%] "
       >
         <div className="w-full flex justify-end pe-3 pt-1 pb-0 text-[20px] font-bold cursor-pointer" onClick={closemodal}>X</div>
         <div className="w-full flex flex-col justify-center p-8 pt-0 ">
